@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,63 +20,31 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
         body {
             font-family: 'Inter', sans-serif;
         }
+
         /* Custom focus state for form elements */
-        .form-input:focus, .form-textarea:focus, .form-select:focus {
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
             border-color: #FFD700;
             box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.5);
         }
     </style>
 </head>
+
 <body class="bg-gray-100">
 
     <div class="flex min-h-screen">
         <!-- Sidebar -->
-          <aside class="w-64 bg-gray-800 text-white flex-shrink-0">
-        <div class="p-6 flex items-center">
-          <img src="../../images/logo.svg" alt="logo" class="w-12 h-12">
-          <h2 class="text-l font-bold">Dedikasi Malang</h2>
-        </div>
-        <nav class="mt-4 px-4">
-          <a
-            href="../kegiatan/index.html"
-            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >Kegiatan</a
-          >
-          <a
-            href="../artikel/index.html"
-            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >Cerita</a
-          >
-          <a
-            href="../donasi/index.html"
-            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >Donasi</a
-          >
-          <a
-            href="../kepengurusan/index.html"
-            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >Kepengurusan</a
-          >
-          <a
-            href="../detail-halaman/index.html"
-            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >Halaman</a
-          >
-          <a
-            href="../manage-admin/index.html"
-            class="block py-2.5 px-4 rounded transition duration-200 bg-primary-yellow text-gray-800 font-medium"
-            >Admin</a
-          >
-        </nav>
-      </aside>
+        <?php include '../../components/sidebar.php'; ?>
 
-      <!-- Main Content -->
-      <div class="flex-1 flex flex-col h-screen overflow-x-auto">
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col h-screen overflow-x-auto">
             <!-- Header -->
-            <header class="bg-white shadow-sm">
+            <header class="bg-primary-yellow shadow-sm sticky top-0 z-10">
                 <div class="px-8 py-6">
                     <h1 class="text-3xl font-bold text-gray-900">Tambah Kegiatan</h1>
                     <p class="mt-1 text-sm text-gray-600">Gunakan formulir ini untuk menambahkan kegiatan baru ke dalam sistem.</p>
@@ -90,27 +59,27 @@
                             <!-- Judul -->
                             <div>
                                 <label for="judul" class="block text-sm font-medium text-gray-700">Judul</label>
-                                <input type="text" name="judul" id="judul" class="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-yellow focus:ring focus:ring-yellow-200 focus:ring-opacity-50" placeholder="Contoh: Bakti Sosial di Panti Asuhan">
+                                <input type="text" name="judul" id="judul" class="block w-full rounded-lg border-gray-300 shadow-sm py-2 px-3 focus:border-primary-yellow focus:ring focus:ring-primary-yellow/50 transition duration-150" placeholder="Contoh: Bakti Sosial di Panti Asuhan">
                             </div>
 
                             <!-- Deskripsi -->
                             <div>
                                 <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                                <textarea id="deskripsi" name="deskripsi" rows="4" class="form-textarea mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-yellow focus:ring focus:ring-yellow-200 focus:ring-opacity-50" placeholder="Jelaskan secara rinci mengenai kegiatan yang akan dilaksanakan."></textarea>
+                                <textarea id="deskripsi" name="deskripsi" rows="4" class="block w-full rounded-lg border-gray-300 shadow-sm py-2 px-3 focus:border-primary-yellow focus:ring focus:ring-primary-yellow/50 transition duration-150" placeholder="Jelaskan secara rinci mengenai kegiatan yang akan dilaksanakan."></textarea>
                             </div>
 
                             <!-- Tanggal & Lokasi -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label for="tanggal" class="block text-sm font-medium text-gray-700">Tanggal Pelaksanaan</label>
-                                    <input type="date" name="tanggal" id="tanggal" class="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-yellow focus:ring focus:ring-yellow-200 focus:ring-opacity-50">
+                                    <input type="date" name="tanggal" id="tanggal" class="block w-full rounded-lg border-gray-300 shadow-sm py-2 px-3 focus:border-primary-yellow focus:ring focus:ring-primary-yellow/50 transition duration-150">
                                 </div>
                                 <div>
                                     <label for="lokasi" class="block text-sm font-medium text-gray-700">Lokasi</label>
-                                    <input type="text" name="lokasi" id="lokasi" class="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-yellow focus:ring focus:ring-yellow-200 focus:ring-opacity-50" placeholder="Contoh: Malang, Jawa Timur">
+                                    <input type="text" name="lokasi" id="lokasi" class="block w-full rounded-lg border-gray-300 shadow-sm py-2 px-3 focus:border-primary-yellow focus:ring focus:ring-primary-yellow/50 transition duration-150" placeholder="Contoh: Malang, Jawa Timur">
                                 </div>
                             </div>
-                            
+
                             <!-- Upload Gambar -->
                             <div>
                                 <label class="block text-sm font-medium text-gray-700">Upload Gambar Utama</label>
@@ -134,7 +103,7 @@
                             <!-- Status -->
                             <div>
                                 <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
-                                <select id="status" name="status" class="form-select mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-yellow focus:ring focus:ring-yellow-200 focus:ring-opacity-50">
+                                <select id="status" name="status" class="block w-full rounded-lg border-gray-300 shadow-sm py-2 px-3 focus:border-primary-yellow focus:ring focus:ring-primary-yellow/50 transition duration-150">
                                     <option>Draft</option>
                                     <option>Publish</option>
                                 </select>
@@ -157,4 +126,5 @@
     </div>
 
 </body>
+
 </html>

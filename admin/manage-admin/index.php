@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,56 +20,21 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
         body {
             font-family: 'Inter', sans-serif;
         }
     </style>
 </head>
+
 <body class="bg-gray-100">
 
     <div class="flex min-h-screen">
         <!-- Sidebar -->
-         <aside class="w-64 bg-gray-800 text-white flex-shrink-0">
-        <div class="p-6 flex items-center">
-          <img src="../../images/logo.svg" alt="logo" class="w-12 h-12">
-          <h2 class="text-l font-bold">Dedikasi Malang</h2>
-        </div>
-        <nav class="mt-4 px-4">
-          <a
-            href="../kegiatan/index.html"
-            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >Kegiatan</a
-          >
-          <a
-            href="../artikel/index.html"
-            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >Cerita</a
-          >
-          <a
-            href="../donasi/index.html"
-            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >Donasi</a
-          >
-          <a
-            href="../kepengurusan/index.html"
-            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >Kepengurusan</a
-          >
-          <a
-            href="../detail-halaman/index.html"
-            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >Halaman</a
-          >
-          <a
-            href="../manage-admin/index.html"
-            class="block py-2.5 px-4 rounded transition duration-200 bg-primary-yellow text-gray-800 font-medium"
-            >Admin</a
-          >
-        </nav>
-      </aside>
+        <?php include '../../components/sidebar.php'; ?>
 
-      <!-- Main Content -->
-      <div class="flex-1 flex flex-col h-screen overflow-x-auto">
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col h-screen overflow-x-auto">
             <!-- Header -->
             <header class="bg-primary-yellow shadow-md">
                 <div class="px-6 py-3">
@@ -79,8 +45,14 @@
             <!-- Content -->
             <main class="flex-1 p-4 bg-gray-50">
                 <div class="flex justify-end mb-6">
-                    <a href="create.html" class="bg-primary-yellow text-gray-800 font-semibold py-2 px-5 rounded-lg shadow-md hover:bg-yellow-400 transition-colors duration-300">
-                        Tambah Admin
+                    <a
+                        href="create.php"
+                        class="inline-flex items-center bg-primary-yellow text-gray-800 font-semibold py-2 px-3 rounded-lg shadow-md hover:bg-yellow-400 transition-colors duration-300">
+                        <!-- Ikon Plus -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2">
+                            <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
+                        </svg>
+                        <span>Tambah Admin</span>
                     </a>
                 </div>
 
@@ -105,12 +77,16 @@
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Aktif</span>
                                 </td>
-                               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
-                                    <a href="edit.html" class="p-2 rounded-md bg-primary-yellow hover:bg-yellow-400 transition-colors duration-200 inline-block" title="Edit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L16.732 3.732z" /></svg>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
+                                    <a href="edit.php" class="p-2 rounded-md bg-primary-yellow hover:bg-yellow-400 transition-colors duration-200 inline-block" title="Edit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L16.732 3.732z" />
+                                        </svg>
                                     </a>
                                     <a href="#" class="p-2 rounded-md bg-primary-yellow hover:bg-yellow-400 transition-colors duration-200 inline-block" title="Hapus">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                        </svg>
                                     </a>
                                 </td>
                             </tr>
@@ -122,12 +98,16 @@
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Aktif</span>
                                 </td>
-                               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
-                                    <a href="edit.html" class="p-2 rounded-md bg-primary-yellow hover:bg-yellow-400 transition-colors duration-200 inline-block" title="Edit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L16.732 3.732z" /></svg>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
+                                    <a href="edit.php" class="p-2 rounded-md bg-primary-yellow hover:bg-yellow-400 transition-colors duration-200 inline-block" title="Edit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L16.732 3.732z" />
+                                        </svg>
                                     </a>
                                     <a href="#" class="p-2 rounded-md bg-primary-yellow hover:bg-yellow-400 transition-colors duration-200 inline-block" title="Hapus">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                        </svg>
                                     </a>
                                 </td>
                             </tr>
@@ -140,11 +120,15 @@
                                     <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Aktif</span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
-                                    <a href="edit.html" class="p-2 rounded-md bg-primary-yellow hover:bg-yellow-400 transition-colors duration-200 inline-block" title="Edit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L16.732 3.732z" /></svg>
+                                    <a href="edit.php" class="p-2 rounded-md bg-primary-yellow hover:bg-yellow-400 transition-colors duration-200 inline-block" title="Edit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L16.732 3.732z" />
+                                        </svg>
                                     </a>
                                     <a href="#" class="p-2 rounded-md bg-primary-yellow hover:bg-yellow-400 transition-colors duration-200 inline-block" title="Hapus">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                        </svg>
                                     </a>
                                 </td>
                             </tr>
@@ -156,12 +140,16 @@
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Nonaktif</span>
                                 </td>
-                               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
-                                    <a href="edit.html" class="p-2 rounded-md bg-primary-yellow hover:bg-yellow-400 transition-colors duration-200 inline-block" title="Edit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L16.732 3.732z" /></svg>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
+                                    <a href="edit.php" class="p-2 rounded-md bg-primary-yellow hover:bg-yellow-400 transition-colors duration-200 inline-block" title="Edit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L16.732 3.732z" />
+                                        </svg>
                                     </a>
                                     <a href="#" class="p-2 rounded-md bg-primary-yellow hover:bg-yellow-400 transition-colors duration-200 inline-block" title="Hapus">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                        </svg>
                                     </a>
                                 </td>
                             </tr>
@@ -173,18 +161,22 @@
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Aktif</span>
                                 </td>
-                               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
-                                    <a href="edit.html" class="p-2 rounded-md bg-primary-yellow hover:bg-yellow-400 transition-colors duration-200 inline-block" title="Edit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L16.732 3.732z" /></svg>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
+                                    <a href="edit.php" class="p-2 rounded-md bg-primary-yellow hover:bg-yellow-400 transition-colors duration-200 inline-block" title="Edit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L16.732 3.732z" />
+                                        </svg>
                                     </a>
                                     <a href="#" class="p-2 rounded-md bg-primary-yellow hover:bg-yellow-400 transition-colors duration-200 inline-block" title="Hapus">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                        </svg>
                                     </a>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    
+
                     <!-- Pagination -->
                     <div class="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
                         <div class="text-sm text-gray-600">
@@ -206,4 +198,5 @@
     </div>
 
 </body>
+
 </html>
