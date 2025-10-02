@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Pengurus - Dedikasi Malang CMS</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-yellow': '#FFD700',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+          <aside class="w-64 bg-gray-800 text-white flex-shrink-0">
+        <div class="p-6 flex items-center">
+          <img src="../../images/logo.svg" alt="logo" class="w-12 h-12">
+          <h2 class="text-l font-bold">Dedikasi Malang</h2>
+        </div>
+        <nav class="mt-4 px-4">
+          <a
+            href="../kegiatan/index.html"
+            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+            >Kegiatan</a
+          >
+          <a
+            href="../artikel/index.html"
+            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+            >Cerita</a
+          >
+          <a
+            href="../donasi/index.html"
+            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+            >Donasi</a
+          >
+          <a
+            href="../kepengurusan/index.html"
+            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+            >Kepengurusan</a
+          >
+          <a
+            href="../detail-halaman/index.html"
+            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+            >Halaman</a
+          >
+          <a
+            href="../manage-admin/index.html"
+            class="block py-2.5 px-4 rounded transition duration-200 bg-primary-yellow text-gray-800 font-medium"
+            >Admin</a
+          >
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="flex-1 flex flex-col h-screen overflow-x-auto">
+            <!-- Header with Yellow Bar -->
+            <header class="bg-white shadow-sm">
+                <div class="px-8 py-6 flex items-center space-x-4">
+                    <div class="h-9 w-2 bg-primary-yellow rounded-full"></div>
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-900">Edit Pengurus</h1>
+                        <p class="mt-1 text-sm text-gray-600">Perbarui detail pengurus yang sudah ada.</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <main class="flex-1 p-8 bg-gray-50">
+                <form action="#" method="POST">
+                    <div class="bg-white rounded-lg shadow-md p-8 max-w-3xl mx-auto">
+                        <div class="space-y-6">
+                            <!-- Nama Lengkap -->
+                            <div>
+                                <label for="nama" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+                                <input type="text" name="nama" id="nama" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-yellow focus:ring focus:ring-yellow-200 focus:ring-opacity-50" value="Ahmad Maulana">
+                            </div>
+
+                            <!-- Jabatan & Periode -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="jabatan" class="block text-sm font-medium text-gray-700">Jabatan</label>
+                                    <input type="text" name="jabatan" id="jabatan" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-yellow focus:ring focus:ring-yellow-200 focus:ring-opacity-50" value="Ketua Umum">
+                                </div>
+                                <div>
+                                    <label for="periode" class="block text-sm font-medium text-gray-700">Periode</label>
+                                    <input type="text" name="periode" id="periode" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-yellow focus:ring focus:ring-yellow-200 focus:ring-opacity-50" value="2024 - 2026">
+                                </div>
+                            </div>
+                            
+                            <!-- Upload Foto -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Foto</label>
+                                <div class="mt-2 flex items-center space-x-6">
+                                    <div class="shrink-0">
+                                        <img class="h-20 w-20 object-cover rounded-full" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="Current photo">
+                                    </div>
+                                    <label class="block">
+                                        <span class="sr-only">Choose photo</span>
+                                        <input type="file" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-yellow-50 file:text-yellow-700 hover:file:bg-yellow-100"/>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="border-t border-gray-200 mt-8 pt-6 flex items-center justify-end space-x-3">
+                            <a href="#" class="bg-white py-2 px-5 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50">
+                                Batal
+                            </a>
+                            <button type="submit" class="inline-flex justify-center py-2 px-5 border border-transparent shadow-sm text-sm font-medium rounded-lg text-gray-800 bg-primary-yellow hover:bg-yellow-400 transition-colors duration-300">
+                                Update Pengurus
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>

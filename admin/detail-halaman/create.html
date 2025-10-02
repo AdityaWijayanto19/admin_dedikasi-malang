@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tambah Halaman - Dedikasi Malang CMS</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- TinyMCE Rich Text Editor CDN -->
+    <script
+      src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+
+    <script>
+      // Konfigurasi Tailwind CSS
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "primary-yellow": "#FFD700",
+            },
+          },
+        },
+      };
+
+      // Inisialisasi TinyMCE
+      document.addEventListener("DOMContentLoaded", () => {
+        tinymce.init({
+          selector: "#isiHalaman",
+          plugins:
+            "anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount",
+          toolbar:
+            "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat",
+          height: 400,
+        });
+      });
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      /* Custom styling for TinyMCE to better fit the theme */
+      .tox-tinymce {
+        border-radius: 0.5rem;
+        border: 1px solid #d1d5db; /* border-gray-300 */
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="flex min-h-screen h-screen">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-gray-800 text-white flex-shrink-0">
+        <div class="p-6 flex items-center">
+          <img src="../../images/logo.svg" alt="logo" class="w-12 h-12">
+          <h2 class="text-l font-bold">Dedikasi Malang</h2>
+        </div>
+        <nav class="mt-4 px-4">
+          <a
+            href="../kegiatan/index.html"
+            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+            >Kegiatan</a
+          >
+          <a
+            href="../artikel/index.html"
+            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+            >Cerita</a
+          >
+          <a
+            href="../donasi/index.html"
+            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+            >Donasi</a
+          >
+          <a
+            href="../kepengurusan/index.html"
+            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+            >Kepengurusan</a
+          >
+          <a
+            href="../detail-halaman/index.html"
+            class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+            >Halaman</a
+          >
+          <a
+            href="../manage-admin/index.html"
+            class="block py-2.5 px-4 rounded transition duration-200 bg-primary-yellow text-gray-800 font-medium"
+            >Admin</a
+          >
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="flex-1 flex flex-col h-screen overflow-x-auto">
+        <!-- Header -->
+        <header class="bg-primary-yellow shadow-md">
+          <div class="px-8 py-6">
+            <h1 class="text-3xl font-bold text-gray-800">
+              Tambah Halaman Baru
+            </h1>
+          </div>
+        </header>
+
+        <!-- Content -->
+        <main class="flex-1 p-8 bg-gray-50">
+          <div class="bg-white rounded-lg shadow-md p-8">
+            <form action="#" method="POST">
+              <div class="space-y-6">
+                <!-- Judul Halaman -->
+                <div>
+                  <label
+                    for="judul"
+                    class="block text-sm font-medium text-gray-700"
+                    >Judul Halaman</label
+                  >
+                  <input
+                    type="text"
+                    name="judul"
+                    id="judul"
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-400 focus:ring focus:ring-yellow-300 focus:ring-opacity-50"
+                    placeholder="Contoh: Tentang Kami"
+                  />
+                </div>
+
+                <!-- Slug (URL) -->
+                <div>
+                  <label
+                    for="slug"
+                    class="block text-sm font-medium text-gray-700"
+                    >Slug (URL)</label
+                  >
+                  <div class="mt-1 flex rounded-md shadow-sm">
+                    <span
+                      class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm"
+                      >/</span
+                    >
+                    <input
+                      type="text"
+                      name="slug"
+                      id="slug"
+                      class="flex-1 min-w-0 block w-full px-3 py-2 rounded-none rounded-r-md focus:ring-yellow-300 focus:border-yellow-400 sm:text-sm border-gray-300"
+                      placeholder="contoh: tentang-kami"
+                    />
+                  </div>
+                </div>
+
+                <!-- Isi Halaman (Rich Text Editor) -->
+                <div>
+                  <label
+                    for="isiHalaman"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Isi Halaman</label
+                  >
+                  <textarea id="isiHalaman"></textarea>
+                </div>
+
+                <!-- Status -->
+                <div>
+                  <label
+                    for="status"
+                    class="block text-sm font-medium text-gray-700"
+                    >Status</label
+                  >
+                  <select
+                    id="status"
+                    name="status"
+                    class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-yellow-300 focus:border-yellow-400 sm:text-sm rounded-md"
+                  >
+                    <option value="published">Publish</option>
+                    <option value="draft" selected>Draft</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Tombol Aksi -->
+              <div
+                class="mt-8 pt-6 border-t border-gray-200 flex justify-end gap-x-4"
+              >
+                <a
+                  href="#"
+                  class="bg-gray-200 text-gray-700 font-semibold py-2 px-5 rounded-lg shadow-sm hover:bg-gray-300 transition-colors duration-300"
+                >
+                  Batal
+                </a>
+                <button
+                  type="submit"
+                  class="bg-primary-yellow text-gray-800 font-semibold py-2 px-5 rounded-lg shadow-md hover:bg-yellow-400 transition-colors duration-300"
+                >
+                  Simpan Halaman
+                </button>
+              </div>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
